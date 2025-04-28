@@ -5,7 +5,7 @@ maven "maven"
 }
 stages{
 stage("get the code"){
-git 'https://github.com/penmetsa123/maven-web-application.git'
+git 'git branch: 'main', url: 'https://github.com/penmetsa123/vprofile-project.git''
 }
 stage("Build the code"){
 sh " mvn clean package"
