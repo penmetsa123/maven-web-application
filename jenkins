@@ -1,11 +1,12 @@
-node
-def mavenhome = tool name": "maven"
-{
-stage("Get The Code from git")
-{
-git credentialsId: 'git', url: 'https://github.com/penmetsa123/maven-web-application.git'
+pipeline{
+agent any 
+tools{
+maven "maven"
 }
-stage("Package the code")
-{
-sh "${mavenhome}/bin/mvn clean package"
+stages{
+stage("get the code"){
+git 'https://github.com/penmetsa123/maven-web-application.git'
+}
+stage("Build the code"){
+sh " mvn clean package"
 }
