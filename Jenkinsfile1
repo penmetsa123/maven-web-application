@@ -17,6 +17,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+      stage("creating docker image") {
+            steps {
+                sh 'docker build -t mithun .'
+            }
+        }
     }
 }
 
