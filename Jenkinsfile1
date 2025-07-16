@@ -1,8 +1,11 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("get the code"){
-            git credentialsId: 'git-credintials', url: 'https://github.com/penmetsa123/maven-web-application.git'
-        }//git stage ending
+
+    stages {
+        stage("Get the Code") {
+            steps {
+                git credentialsId: 'git-credintials', url: 'https://github.com/penmetsa123/maven-web-application.git'
+            }
+        }//stage ending
     }//stages ending
-}//closing the pipeline
+}//ending pipeline
